@@ -27,16 +27,16 @@
     <BootSegment>2</BootSegment>
     <eraseonlaunchrule>0</eraseonlaunchrule>
     <AsfFrameworkConfig>
-      <framework-data xmlns="">
-        <options />
-        <configurations />
-        <files />
-        <documentation help="" />
-        <offline-documentation help="" />
-        <dependencies>
-          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.21.0" />
-        </dependencies>
-      </framework-data>
+      <framework-data>
+  <options />
+  <configurations />
+  <files />
+  <documentation help="" />
+  <offline-documentation help="" />
+  <dependencies>
+    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.44.1" />
+  </dependencies>
+</framework-data>
     </AsfFrameworkConfig>
     <avrtool>com.atmel.avrdbg.tool.atmelice</avrtool>
     <com_atmel_avrdbg_tool_atmelice>
@@ -51,6 +51,8 @@
       <ToolName>Atmel-ICE</ToolName>
     </com_atmel_avrdbg_tool_atmelice>
     <avrtoolinterface>SWD</avrtoolinterface>
+    <ResetRule>0</ResetRule>
+    <EraseKey />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Stub' ">
     <ToolchainSettings>
@@ -110,13 +112,25 @@
     <Compile Include="MotateProject\motate\Atmel_sam4e\SamUSB.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MotateProject\motate\Atmel_sams70\motate_chip_pin_functions.h">
+    <Compile Include="MotateProject\motate\Atmel_samv71\motate_chip_pin_functions.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MotateProject\motate\Atmel_sams70\SamUSB.cpp">
+    <Compile Include="MotateProject\motate\Atmel_samv71\ProcessorServiceCall.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MotateProject\motate\Atmel_sams70\SamUSB.h">
+    <Compile Include="MotateProject\motate\Atmel_samv71\ProcessorSPI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\Atmel_samv71\ProcessorTWI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\Atmel_samv71\ProcessorUART.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\Atmel_samv71\SamUSB.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\Atmel_samv71\SamUSB.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="MotateProject\motate\Atmel_sam_common\SamCommon.h">
@@ -1118,6 +1132,411 @@
     <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\sams70\source\templates\system_sams70.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\acc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\aes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\afec.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\chipid.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\dacc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\efc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\gmac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\gpbr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\hsmci.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\i2sc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\icm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\isi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\matrix.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\mcan.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\mlb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\pio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\pmc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\pwm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\qspi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\rstc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\rswdt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\rtc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\rtt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\sdramc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\smc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\spi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\ssc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\supc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\tc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\trng.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\twihs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\uart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\usart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\usbhs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\utmi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\wdt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component\xdmac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\acc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\aes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\afec0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\afec1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\chipid.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\dacc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\efc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\gmac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\gpbr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\hsmci.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\i2sc0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\i2sc1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\icm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\isi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\matrix.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\mcan0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\mcan1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\mlb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\pioa.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\piob.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\pioc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\piod.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\pioe.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\pmc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\pwm0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\pwm1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\qspi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\rstc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\rswdt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\rtc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\rtt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\sdramc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\smc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\spi0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\spi1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\ssc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\supc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\tc0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\tc1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\tc2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\tc3.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\trng.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\twihs0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\twihs1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\twihs2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\uart0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\uart1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\uart2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\uart3.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\uart4.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\usart0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\usart1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\usart2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\usbhs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\utmi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\wdt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance\xdmac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\pio\samv71j19.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\pio\samv71j19b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\pio\samv71j20.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\pio\samv71j20b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\pio\samv71j21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\pio\samv71j21b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\pio\samv71n19.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\pio\samv71n19b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\pio\samv71n20.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\pio\samv71n20b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\pio\samv71n21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\pio\samv71n21b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\pio\samv71q19.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\pio\samv71q19b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\pio\samv71q20.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\pio\samv71q20b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\pio\samv71q21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\pio\samv71q21b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\samv71.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\samv71j19.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\samv71j19b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\samv71j20.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\samv71j20b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\samv71j21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\samv71j21b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\samv71n19.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\samv71n19b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\samv71n20.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\samv71n20b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\samv71n21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\samv71n21b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\samv71q19.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\samv71q19b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\samv71q20.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\samv71q20b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\samv71q21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\samv71q21b.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\source\templates\gcc\startup_samv71.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\source\templates\iar\startup_samv71.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\source\templates\system_samv71.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\source\templates\system_samv71.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MotateProject\motate\Freescale_klxx\KL05ZPins.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -1231,6 +1650,7 @@
     <Folder Include="MotateProject\motate\arch" />
     <Folder Include="MotateProject\motate\Atmel_sam3x\" />
     <Folder Include="MotateProject\motate\Atmel_sam4e\" />
+    <Folder Include="MotateProject\motate\Atmel_sams70\" />
     <Folder Include="MotateProject\motate\Atmel_sam_common\" />
     <Folder Include="MotateProject\motate\Atmel_XMega" />
     <Folder Include="MotateProject\motate\board" />
@@ -1279,6 +1699,7 @@
     <Folder Include="MotateProject\motate\cmsis\TARGET_Atmel\linker_scripts\sams70\sams70q21\" />
     <Folder Include="MotateProject\motate\cmsis\TARGET_Atmel\linker_scripts\sams70\sams70q21\gcc\" />
     <Folder Include="MotateProject\motate\cmsis\TARGET_Atmel\linker_scripts\sams70\sams70q21\iar\" />
+    <Folder Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71" />
     <Folder Include="MotateProject\motate\cmsis\TARGET_Atmel\preprocessor\" />
     <Folder Include="MotateProject\motate\cmsis\TARGET_Atmel\sam3x\" />
     <Folder Include="MotateProject\motate\cmsis\TARGET_Atmel\sam3x\include\" />
@@ -1307,8 +1728,16 @@
     <Folder Include="MotateProject\motate\cmsis\TARGET_Atmel\sams70\source\templates\" />
     <Folder Include="MotateProject\motate\cmsis\TARGET_Atmel\sams70\source\templates\gcc\" />
     <Folder Include="MotateProject\motate\cmsis\TARGET_Atmel\sams70\source\templates\iar\" />
+    <Folder Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include" />
+    <Folder Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\component" />
+    <Folder Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\instance" />
+    <Folder Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\include\pio" />
+    <Folder Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\source" />
+    <Folder Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\source\templates" />
+    <Folder Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\source\templates\gcc" />
+    <Folder Include="MotateProject\motate\cmsis\TARGET_Atmel\samv71\source\templates\iar" />
     <Folder Include="MotateProject\motate\Freescale_klxx" />
-    <Folder Include="MotateProject\motate\Atmel_sams70" />
+    <Folder Include="MotateProject\motate\Atmel_samv71" />
     <Folder Include="MotateProject\motate\platform" />
     <Folder Include="MotateProject\motate\platform\atmel_sam" />
     <Folder Include="MotateProject\motate\platform\atmel_xmega" />

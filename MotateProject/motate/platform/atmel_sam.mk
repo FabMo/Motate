@@ -115,6 +115,21 @@ else ifeq ($(CHIP),$(findstring $(CHIP), $(SAMS70)))
 
     JLINK_DEVICE=AT$(CHIP)
 
+else ifeq ($(CHIP),$(findstring $(CHIP), $(SAMV71)))
+
+    CHIP_SERIES:=samv71
+
+    ifeq ($(CHIP),$(findstring $(CHIP), SAMV71Q21))
+        CHIP_SUBSERIES:=samv71q21
+    else
+        $(error $(CHIP) is not in a known Atmel subseries (incomplete makefile, most likely).)
+    endif
+
+    CPU_DEV = cortex-m7
+    FLOAT_OPTIONS = -mfloat-abi=hard -mfpu=fpv5-d16
+
+    JLINK_DEVICE=AT$(CHIP)
+
 else
 
 $(error $(CHIP) is not a known Atmel processor.)

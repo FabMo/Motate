@@ -166,7 +166,7 @@ namespace Motate {
 #include <SamPins.h>
 #endif
 
-#if defined(__SAMS70N19__) || defined(__SAMS70N20__) || defined(__SAMS70N21__)
+#if defined(__SAMS70N19__) || defined(__SAMS70N20__) || defined(__SAMS70N21__) || defined(__SAMV71Q21__) || defined(__SAMV71Q21B__)
 #include <SamPins.h>
 #endif
 

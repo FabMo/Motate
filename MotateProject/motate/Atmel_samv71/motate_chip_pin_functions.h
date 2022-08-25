@@ -95,7 +95,7 @@ namespace Motate {
     _MAKE_MOTATE_PWM_PIN('C',  5, _TC(/*2*/6,0),  /*Peripheral:*/ B,  /*Inverted:*/ false);
     _MAKE_MOTATE_PWM_PIN('C',  6, _TC(/*2*/6,1),  /*Peripheral:*/ B,  /*Inverted:*/ false);
     _MAKE_MOTATE_PWM_PIN('C',  8, _TC(/*2*/7,0),  /*Peripheral:*/ B,  /*Inverted:*/ false);
-    _MAKE_MOTATE_PWM_PIN('C',  9, _TC(/*2*/7,1),  /*Peripheral:*/ B,  /*Inverted:*/ false);
+//    _MAKE_MOTATE_PWM_PIN('C',  9, _TC(/*2*/7,1),  /*Peripheral:*/ B,  /*Inverted:*/ false); // USB_VBUS
     _MAKE_MOTATE_PWM_PIN('C', 11, _TC(/*2*/8,0),  /*Peripheral:*/ B,  /*Inverted:*/ false);
     _MAKE_MOTATE_PWM_PIN('C', 12, _TC(/*2*/8,1),  /*Peripheral:*/ B,  /*Inverted:*/ false);
 #endif // TC2
@@ -116,7 +116,7 @@ namespace Motate {
 #endif // TC1
 #endif // PIOC
 #ifdef PIOD
-//    _MAKE_MOTATE_PWM_PIN('D',  0, _PWM(1,0),     /*Peripheral:*/ B,  /*Inverted:*/ false); // USB_VBUS
+    _MAKE_MOTATE_PWM_PIN('D',  0, _PWM(1,0),     /*Peripheral:*/ B,  /*Inverted:*/ false); 
     _MAKE_MOTATE_PWM_PIN('D',  1, _PWM(1,0),     /*Peripheral:*/ B,  /*Inverted:*/ true);
     _MAKE_MOTATE_PWM_PIN('D',  2, _PWM(1,1),     /*Peripheral:*/ B,  /*Inverted:*/ false);
     _MAKE_MOTATE_PWM_PIN('D',  3, _PWM(1,1),     /*Peripheral:*/ B,  /*Inverted:*/ true);

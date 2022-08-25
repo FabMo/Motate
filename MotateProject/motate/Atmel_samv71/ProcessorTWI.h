@@ -1,8 +1,8 @@
 /*
- MotateUniqueID.hpp - Chip Unique ID retrieval library for the Motate system
- http://github.com/synthetos/motate/
+  ProcessorTWI.hpp - Processor-specific TWI Library for the Motate system
+  http://github.com/synthetos/motate/
 
- Copyright (c) 2015 Robert Giseburt
+  Copyright (c) 2018 Robert Giseburt
 
 	This file is part of the Motate Library.
 
@@ -25,45 +25,7 @@
 	SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
 	OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- */
+*/
 
-#ifndef MOTATECHIPID_H_ONCE
-#define MOTATECHIPID_H_ONCE
-
-#include <cinttypes>
-
-namespace Motate {
-
-    
-
-} // namespace Motate
-
-#ifdef __AVR_XMEGA__
-
-//#include <Atmel_avr/AvrXSPI.h>
-
-#else
-
-#ifdef __AVR__
-//#include <Atmel_avr/AvrSPI.h>
-#endif
-
-#endif
-
-#if defined(__SAM3X8E__) || defined(__SAM3X8C__)
-#include <SamUniqueID.h>
-#endif
-
-#if defined(__SAM4E8E__) || defined(__SAM4E16E__) || defined(__SAM4E8C__) || defined(__SAM4E16C__)
-#include <SamUniqueID.h>
-#endif
-
-#if defined(__SAMS70N19__) || defined(__SAMS70N20__) || defined(__SAMS70N21__) || defined(__SAMV71Q21__) || defined(__SAMV71Q21B__)
-#include <SamUniqueID.h>
-#endif
-
-#if defined(__KL05Z__)
-//#include <Freescale_klxx/KL05ZSPI.h>
-#endif
-
-#endif /* end of include guard: MOTATECHIPID_H_ONCE */
+// TWI is shared among the Sam processors
+#include <SamTWI.h>

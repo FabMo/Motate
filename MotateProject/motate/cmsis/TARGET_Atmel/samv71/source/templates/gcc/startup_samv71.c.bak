@@ -307,7 +307,6 @@ const DeviceVectors exception_table = {
  * To initialize the device, and call the main() routine.
  */
 void Reset_Handler(void)
-{
     /* Set the Main STACK Pointer to DTCM stack section */
     //    __DSB();
     //    __ISB();
