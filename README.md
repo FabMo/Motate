@@ -49,3 +49,5 @@ Please share any suggestions for changes. Pull requests welcome as well.
 Please see the [Wiki](https://github.com/synthetos/Motate/wiki).
 
 -Rob
+
+dumb change that must be reverted before any pr to synthetos
